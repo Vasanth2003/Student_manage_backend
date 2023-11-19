@@ -13,7 +13,7 @@ const app = express();
 app.use(cors());
 
 app.use(express.json());
-app.use('api/', studentRouter);
+app.use('/api', console.log("Hello");
 
 // MongoDB URI from .env file
 const mongodbURI = process.env.MONGODB_URI;
