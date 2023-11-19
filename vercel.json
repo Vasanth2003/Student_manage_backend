@@ -12,6 +12,6 @@
     { "src": ".*", "status": 404, "dest": "/404.html" }
   ],
   "env": {
-    "MONGODB_URI": "@your-vercel-environment-variable-for-mongodb-uri"
+    "MONGODB_URI": "mongodb+srv://vasanth:zJBix33TtSCJxVMN@cluster0.wm23zoh.mongodb.net/"
   }
 }
