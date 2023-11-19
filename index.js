@@ -5,20 +5,17 @@ import studentRouter from './routes/student_routes.js';
 import dotenv from 'dotenv';
 dotenv.config();
 
-const PORT = process.env.PORT || 5000; // Use the provided port or default to 5000
+const PORT = process.env.PORT || 5000; 
 const app = express();
 
-// Enable CORS for all routes
 app.use(cors());
 
 app.use(express.json());
 app.use('/api/student', studentRouter);
 
 
-// MongoDB URI from .env file
 const mongodbURI = process.env.MONGODB_URI;
 
-// Connect to MongoDB using Mongoose
 mongoose
   .connect(mongodbURI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
