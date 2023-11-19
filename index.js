@@ -13,7 +13,7 @@ const app = express();
 app.use(cors());
 
 app.use(express.json());
-app.use('https://student-management-api-nine.vercel.app', studentRouter);
+app.use('api/', studentRouter);
 
 // MongoDB URI from .env file
 const mongodbURI = process.env.MONGODB_URI;
