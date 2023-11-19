@@ -1,8 +1,9 @@
 import express from 'express';
 import mongoose from 'mongoose';
 import cors from 'cors';
-import studentRouter from './routes/student_routes.js';
 import dotenv from 'dotenv';
+import { addStudent, deleteById,searchById, deleteAll,getAllStudents, updateStudentById } from "./controllers/studentController.js";
+
 
 dotenv.config();
 
@@ -13,8 +14,12 @@ const app = express();
 app.use(cors());
 
 app.use(express.json());
-app.use('/api',studentRouter);
-
+app.post("/add ",addStudent);
+app.get("/students",getAllStudents);
+app.put("/updatedetails/:id",updateStudentById);
+app.delete("/deletestudent/:id",deleteById);
+app.delete("/deleteall",deleteAll);
+app.get("/search/:id",searchById);
 // MongoDB URI from .env file
 const mongodbURI = process.env.MONGODB_URI;
 
