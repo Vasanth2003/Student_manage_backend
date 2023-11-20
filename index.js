@@ -17,7 +17,10 @@ app.use(
 
 app.use(express.json());
 app.use('/api/student', studentRouter);
-app.use('/',(req,res)=>{console.log("Working")};
+app.use('/', (req, res) => {
+  console.log("Working");
+});
+
 
 
 const mongodbURI = process.env.MONGODB_URI;
